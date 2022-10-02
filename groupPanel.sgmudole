@@ -2,7 +2,7 @@
 #!desc=通过panel显示及控制策略组 只有手动更新情况下会切换策略组，因此你可以配置自动更新以防止数据与实际不一致
 
 [Script]
-groupPanel = script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js,argument=icon=network&color=#86abee&group=Proxy, type=generic,timeout=10
+groupPanel = script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js,argument=icon=network&color=#86abee&group=𝐇𝐨𝐦𝐞, type=generic,timeout=10
   #对应参数：
 	#icon：图标
 	#color：图标颜色

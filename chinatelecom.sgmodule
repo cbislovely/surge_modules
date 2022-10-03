@@ -2,7 +2,7 @@
 #!desc=电信套餐查询
 
 [Script]
-电信套餐查询 = script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomInfinity.js,type=http-request,pattern=https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do
+电信套餐查询 = script-path=https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/telecomInfinity.js,type=http-request,pattern=https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do
 
 [MITM]
 hostname = %APPEND% e.189.cn

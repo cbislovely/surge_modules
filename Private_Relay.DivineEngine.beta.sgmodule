@@ -9,25 +9,25 @@
 [Rule]
 # > iCloud Private Relay
 # https://developer.apple.com/cn/support/prepare-your-network-for-icloud-private-relay/
-DOMAIN,mask-api.icloud.com,✈️ 节点选择
-DOMAIN,mask-api.fe.apple-dns.net,✈️ 节点选择
+DOMAIN,mask-api.icloud.com,Proxy
+DOMAIN,mask-api.fe.apple-dns.net,Proxy
 # Optimize for Private Relay connections
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(USER-AGENT,Transparent%20network%20proxy%20for%20Apple%20system%20services*)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask.icloud.com)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask.apple-dns.net)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-canary.icloud.com)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,canary.mask.apple-dns.net)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-h2.icloud.com)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-t.apple-dns.net)),🌐 全球直连
-AND,((PROTOCOL,UDP),(DEST-PORT,443),(IP-CIDR,17.0.0.0/8,no-resolve)),🌐 全球直连
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(USER-AGENT,Transparent%20network%20proxy%20for%20Apple%20system%20services*)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask.icloud.com)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask.apple-dns.net)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-canary.icloud.com)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,canary.mask.apple-dns.net)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-h2.icloud.com)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(DOMAIN,mask-t.apple-dns.net)),Direct
+AND,((PROTOCOL,UDP),(DEST-PORT,443),(IP-CIDR,17.0.0.0/8,no-resolve)),Direct
 # Allow for network traffic audits
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(USER-AGENT,Transparent%20network%20proxy%20for%20Apple%20system%20services*)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask.icloud.com)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask.apple-dns.net)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-canary.icloud.com)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,canary.mask.apple-dns.net)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-h2.icloud.com)),✈️ 节点选择
-AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-t.apple-dns.net)),✈️ 节点选择
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(USER-AGENT,Transparent%20network%20proxy%20for%20Apple%20system%20services*)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask.icloud.com)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask.apple-dns.net)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-canary.icloud.com)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,canary.mask.apple-dns.net)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-h2.icloud.com)),Proxy
+AND,((PROTOCOL,TCP),(DEST-PORT,443),(DOMAIN,mask-t.apple-dns.net)),Proxy
 
 [Script]
 iCloud ACSE Gateway = type=http-request, pattern=^https?:\/\/p(\d+)-acsegateway\.icloud\.com(\.cn)?\/(v2|v3)\/(accounts|devices)\/(.+)\/subscriptions\/features, requires-body=0, debug=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/beta/js/Private_Relay.request.beta.js, argument=

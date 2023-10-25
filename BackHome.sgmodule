@@ -2,5 +2,5 @@
 #!desc=开启后，可在非家中网络环境访问家庭内网
 
 [Rule]
-AND,((OR,((SUBNET,TYPE:CELLULAR), (NOT, ((OR, ((SUBNET,SSID:Gens-5G), (SUBNET,SSID:Son-5G))))))), (IP-CIDR,192.168.2.0/24)),🏠𝑯𝒐𝒎𝒆
-IP-CIDR,192.168.2.0/24,🏠𝑯𝒐𝒎𝒆
+AND,((OR,((SUBNET,TYPE:CELLULAR), (NOT, ((OR, ((SUBNET,SSID:Gens-5G), (SUBNET,SSID:Son-5G))))))), (IP-CIDR,192.168.2.0/24)),Home
+IP-CIDR,192.168.2.0/24,Home

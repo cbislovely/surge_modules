@@ -1,0 +1,3 @@
+# [WeChat Rss AD]
+127.0.0.1 wxsnsdy.wxs.qq.com
+127.0.0.1 wxsnsdythumb.wxs.qq.com

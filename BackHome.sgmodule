@@ -1,6 +1,6 @@
 #!name=WireGuard 内网访问
-#!desc=开启后，可在非家中网络环境访问家庭内网
+#!desc=开启后，可在非家中网络环境访问家庭内网，需自行创建Home策略组分流
 
 [Rule]
-AND,((OR,((SUBNET,TYPE:CELLULAR), (NOT, ((OR, ((SUBNET,SSID:Gens-5G), (SUBNET,SSID:Son-5G))))))), (IP-CIDR,192.168.2.0/24)),🏡 Home
-IP-CIDR,192.168.2.0/24,🏡 Home
+AND,((OR,((SUBNET,TYPE:CELLULAR), (NOT, ((OR, ((SUBNET,SSID:Gens-5G), (SUBNET,SSID:Son-5G))))))), (IP-CIDR,192.168.2.0/24)),Home
+IP-CIDR,192.168.2.0/24,Home
